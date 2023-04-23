@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: ai_talks
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
